@@ -1,19 +1,46 @@
-<form [formGroup]="pressupostForm">
-  <fieldset>
-    <label for="pres-seo">Seo</label>
-    <input
-      type="checkbox"
-      id="pres-seo"
-      formControlName="Seo"
-      class="bg-black"
+<div class="contaier shadow-sm">
+  <div class="header">
+    <img
+      src="assets/header.png"
+      alt="image_header"
+      class="p-5 img-fluid rounded-3"
     />
-  </fieldset>
-  <fieldset>
-    <label for="pres-ads">Ads</label>
-    <input type="checkbox" id="pres-ads" formControlName="Ads" />
-  </fieldset>
-  <fieldset>
-    <label for="pres-Web">Seo</label>
-    <input type="checkbox" id="pres-Web" formControlName="Web" />
-  </fieldset>
-</form>
+  </div>
+  <div class="general">
+    <form [formGroup]="pressupostForm" class="p-3">
+      <div class="mb-3">
+        <div class="form-check border rounded-3 p-5 shadow-sm">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="pres-seo"
+            formControlName="Seo"
+          />
+          <label class="form-check-label" for="pres-seo">Seo</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="form-check border rounded-3 p-5 shadow-sm">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="pres-ads"
+            formControlName="Ads"
+          />
+          <label class="form-check-label" for="pres-ads">Ads</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="form-check border rounded-3 p-5 shadow-sm">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="pres-web"
+            formControlName="Web"
+          />
+          <label class="form-check-label" for="pres-web">Ads</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
