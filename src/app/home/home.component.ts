@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { BudgetService } from '../services/budget.service.service';
 
 @Component({
   selector: 'app-home',
@@ -10,19 +11,17 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class HomeComponent {
   pressupostForm: FormGroup;
-  Seo: FormControl;
-  Ads: FormControl;
-  Web: FormControl;
+  pressupostTotal: number = 0;
 
-  constructor() {
-    this.Seo = new FormControl('');
-    this.Ads = new FormControl('');
-    this.Web = new FormControl('');
+  constructor(private fb: FormBuilder, private budgetService: BudgetService) {
+    this.pressupostForm = this.fb.group({
+      Seo: [false],
+      Ads: [false],
+      Web: [false],
+    });
 
-    this.pressupostForm = new FormGroup({
-      Seo: this.Seo,
-      Ads: this.Ads,
-      Web: this.Web,
+    this.pressupostForm.valueChanges.subscribe((values) => {
+      this.pressupostTotal = this.budgetService.calculPressupost(values);
     });
   }
 }
