@@ -4,10 +4,15 @@
   <div class="d-flex justify-content-between align-items-center">
     <label for="pages">Número de pàgines</label>
     <div class="d-flex justify-content-end align-items-center">
-      <button type="button" class="btn btn-outline-secondary btn-round">
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-round"
+        (click)="restar('quantitatPagines')"
+      >
         −
       </button>
       <input
+        (change)="capturarCanvis()"
         type="number"
         id="pages"
         formControlName="quantitatPagines"
@@ -16,7 +21,11 @@
         class="form-control"
         style="width: 50px"
       />
-      <button type="button" class="btn btn-outline-secondary btn-round">
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-round"
+        (click)="sumar('quantitatPagines')"
+      >
         +
       </button>
     </div>
@@ -25,10 +34,15 @@
   <div class="d-flex justify-content-between align-items-center">
     <label for="pages">Número de llenguatges</label>
     <div class="d-flex justify-content-end align-items-center">
-      <button type="button" class="btn btn-outline-secondary btn-round">
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-round"
+        (click)="restar('quantitatLlenguatges')"
+      >
         −
       </button>
       <input
+        (change)="capturarCanvis()"
         type="number"
         id="llenguatges"
         formControlName="quantitatLlenguatges"
@@ -37,7 +51,11 @@
         class="form-control"
         style="width: 50px"
       />
-      <button type="button" class="btn btn-outline-secondary btn-round">
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-round"
+        (click)="sumar('quantitatLlenguatges')"
+      >
         +
       </button>
     </div>

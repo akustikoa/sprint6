@@ -25,4 +25,9 @@ export class HomeComponent {
       this.pressupostTotal = this.budgetService.calculPressupost(values);
     });
   }
+  onEventChange() {
+    this.pressupostTotal = this.budgetService.calculPressupost(
+      this.pressupostForm.value
+    );
+  }
 }
