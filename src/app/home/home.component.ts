@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { BudgetService } from '../services/budget.service.service';
+import { PanelComponent } from '../panel/panel.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, PanelComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
