@@ -26,7 +26,6 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="pres-seo"
               formControlName="Seo"
             />
             <label class="form-check-label" for="pres-seo">Afegir</label>
@@ -46,7 +45,6 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="pres-ads"
               formControlName="Ads"
             />
             <label class="form-check-label" for="pres-seo">Afegir</label>
@@ -66,7 +64,7 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="pres-web"
+              (change)="onEventChange()"
               formControlName="Web"
             />
             <label class="form-check-label" for="pres-web">Afegir</label>

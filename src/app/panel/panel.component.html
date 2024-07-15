@@ -1,5 +1,6 @@
 <!-- <div class="collapse" id="collapseExample"> -->
-<div class="card card-body">
+
+<form [formGroup]="extresForm">
   <div class="d-flex justify-content-between align-items-center">
     <label for="pages">Número de pàgines</label>
     <div class="d-flex justify-content-end align-items-center">
@@ -9,7 +10,7 @@
       <input
         type="number"
         id="pages"
-        formControlName="cantidadPaginas"
+        formControlName="quantitatPagines"
         min="1"
         value="1"
         class="form-control"
@@ -21,8 +22,7 @@
     </div>
   </div>
 
-  <div class="card card-body">
-    <div class="d-flex justify-content-between align-items-center"></div>
+  <div class="d-flex justify-content-between align-items-center">
     <label for="pages">Número de llenguatges</label>
     <div class="d-flex justify-content-end align-items-center">
       <button type="button" class="btn btn-outline-secondary btn-round">
@@ -31,7 +31,7 @@
       <input
         type="number"
         id="llenguatges"
-        formControlName="quantitatllenguatges"
+        formControlName="quantitatLlenguatges"
         min="1"
         value="1"
         class="form-control"
@@ -42,5 +42,6 @@
       </button>
     </div>
   </div>
-</div>
+</form>
+
 <!-- </div> -->
