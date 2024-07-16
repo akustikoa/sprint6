@@ -17,7 +17,7 @@ export class BudgetService {
     quantitatLlenguatges: 0,
   };
 
-  calculPressupost(pressupost: any) {
+  calculPressupost(pressupost: any): number {
     this.pressupostTotal = 0;
     if (pressupost.Seo) {
       this.pressupostTotal += this.Seo;
@@ -34,7 +34,7 @@ export class BudgetService {
     return (this.pressupostTotal += this.extres);
   }
 
-  calcularExtres(pressupost: iExtres) {
+  calcularExtres(pressupost: iExtres): number {
     this.extres = 0;
     this.detallExtres = {
       quantitatPagines: pressupost.quantitatPagines,

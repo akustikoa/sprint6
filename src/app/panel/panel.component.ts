@@ -30,7 +30,7 @@ export class PanelComponent {
     this.newItemEvent?.emit(this.extres);
   }
 
-  restar(controlName: string): void {
+  sumar(controlName: string): void {
     const control = this.extresForm.get(controlName) as FormControl;
     if (control) {
       control.setValue(control.value + 1);
@@ -38,7 +38,7 @@ export class PanelComponent {
     }
   }
 
-  sumar(controlName: string): void {
+  restar(controlName: string): void {
     const control = this.extresForm.get(controlName) as FormControl;
     if (control && control.value > 1) {
       control.setValue(control.value - 1);

@@ -13,6 +13,7 @@ import { PanelComponent } from '../panel/panel.component';
 export class HomeComponent {
   pressupostForm: FormGroup;
   pressupostTotal: number = 0;
+  extres: number = 0;
 
   constructor(private fb: FormBuilder, private budgetService: BudgetService) {
     this.pressupostForm = this.fb.group({
@@ -29,5 +30,10 @@ export class HomeComponent {
     this.pressupostTotal = this.budgetService.calculPressupost(
       this.pressupostForm.value
     );
+  }
+  onExtresChange(extres: number) {
+    //recollim l'event onExtresChange per cridar onEventChange
+    this.extres = extres;
+    this.onEventChange();
   }
 }
