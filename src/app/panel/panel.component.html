@@ -1,63 +1,65 @@
-<form [formGroup]="extresForm">
-  <div class="d-flex justify-content-between align-items-center">
-    <label for="pages">Número de pàgines</label>
-    <div class="d-flex justify-content-end align-items-center">
-      <button
-        type="button"
-        class="btn btn-outline-secondary btn-round"
-        (click)="restar('quantitatPagines')"
-      >
-        −
-      </button>
-      <input
-        (change)="capturarCanvis()"
-        type="number"
-        id="pages"
-        formControlName="quantitatPagines"
-        min="1"
-        value="1"
-        class="form-control"
-        style="width: 60px"
-        readonly
-      />
-      <button
-        type="button"
-        class="btn btn-outline-secondary btn-round"
-        (click)="sumar('quantitatPagines')"
-      >
-        +
-      </button>
+<div class="container-right">
+  <form [formGroup]="extresForm">
+    <div class="d-flex justify-content-between align-items-center">
+      <label for="pages">Número de pàgines</label>
+      <div class="d-flex justify-content-end align-items-center">
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-round"
+          (click)="restar('quantitatPagines')"
+        >
+          −
+        </button>
+        <input
+          (change)="capturarCanvis()"
+          type="number"
+          id="pages"
+          formControlName="quantitatPagines"
+          min="1"
+          value="1"
+          class="form-control"
+          style="width: 60px"
+          readonly
+        />
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-round"
+          (click)="sumar('quantitatPagines')"
+        >
+          +
+        </button>
+      </div>
     </div>
-  </div>
 
-  <div class="d-flex justify-content-between align-items-center">
-    <label for="pages">Número de llenguatges</label>
-    <div class="d-flex justify-content-end align-items-center">
-      <button
-        type="button"
-        class="btn btn-outline-secondary btn-round"
-        (click)="restar('quantitatLlenguatges')"
-      >
-        −
-      </button>
-      <input
-        (change)="capturarCanvis()"
-        type="number"
-        id="llenguatges"
-        formControlName="quantitatLlenguatges"
-        min="1"
-        value="1"
-        class="form-control"
-        style="width: 60px"
-        readonly
-      />
-      <button
-        type="button"
-        class="btn btn-outline-secondary btn-round"
-        (click)="sumar('quantitatLlenguatges')"
-      >
-        +
-      </button>
+    <div class="d-flex justify-content-between align-items-center">
+      <label for="pages">Número de llenguatges</label>
+      <div class="d-flex justify-content-end align-items-center">
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-round"
+          (click)="restar('quantitatLlenguatges')"
+        >
+          −
+        </button>
+        <input
+          (change)="capturarCanvis()"
+          type="number"
+          id="llenguatges"
+          formControlName="quantitatLlenguatges"
+          min="1"
+          value="1"
+          class="form-control"
+          style="width: 60px"
+          readonly
+        />
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-round"
+          (click)="sumar('quantitatLlenguatges')"
+        >
+          +
+        </button>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>

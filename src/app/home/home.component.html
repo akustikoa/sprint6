@@ -70,11 +70,9 @@
             <label class="form-check-label" for="pres-web">Afegir</label>
           </div>
 
-          <!-- @if (pressupostForm.get('web')?.value) { -->
-          <div class="w-100 text-end">
-            <app-panel (newItemEvent)="onExtresChange($event)"></app-panel>
-          </div>
-          <!-- } -->
+          @if (pressupostForm.value.Web) {
+          <app-panel (newItemEvent)="onExtresChange($event)"></app-panel>
+          }
         </div>
       </div>
       <div class="text-end mt-4 p-2">
