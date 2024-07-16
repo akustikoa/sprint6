@@ -71,7 +71,9 @@
           </div>
 
           @if (pressupostForm.value.Web) {
-          <app-panel (newItemEvent)="onExtresChange($event)"></app-panel>
+          <div class="w-100 text-end">
+            <app-panel (newItemEvent)="onExtresChange($event)"></app-panel>
+          </div>
           }
         </div>
       </div>
