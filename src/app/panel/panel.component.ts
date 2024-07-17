@@ -3,11 +3,18 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BudgetService } from '../services/budget.service.service';
 import { iExtres } from '../interfaces/i-extres';
+import { ModalLlenguatgesComponent } from '../modal-llenguatges/modal-llenguatges.component';
+import { ModalPaginesComponent } from '../modal-pagines/modal-pagines.component';
 
 @Component({
   selector: 'app-panel',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    ModalLlenguatgesComponent,
+    ModalPaginesComponent,
+  ],
   templateUrl: './panel.component.html',
   styleUrl: './panel.component.scss',
 })

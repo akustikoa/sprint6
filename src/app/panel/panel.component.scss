@@ -15,3 +15,15 @@
   margin-right: 5px;
   font-size: 14px;
 }
+
+.custom-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.custom-button svg {
+  fill: currentColor;
+}
+.custom:focus {
+  outline: none;
+}

@@ -17,6 +17,7 @@ export class HomeComponent {
 
   constructor(private fb: FormBuilder, private budgetService: BudgetService) {
     this.pressupostForm = this.fb.group({
+      // inicialitzem els camps dels formularis tots a false
       Seo: [false],
       Ads: [false],
       Web: [false],
