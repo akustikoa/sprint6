@@ -1,85 +1,85 @@
-<div class="contaier shadow-sm">
-  <div class="header position-relative text-center p-5">
-    <h1
-      class="position-absolute top-50 start-50 translate-middle text-black-75"
-    >
-      Aconsegueix la millor qualitat
-    </h1>
-    <img
-      src="assets/header.png"
-      alt="image_header"
-      class="rounded-3 img-fluid w-100"
-    />
+<div class="container shadow-sm">
+  <div class="row">
+    <div class="col-12">
+      <div class="header position-relative text-center p-5">
+        <h1 class="position-absolute top-50 start-50 translate-middle text-black-75">
+          Aconsegueix la millor qualitat
+        </h1>
+        <img src="assets/header.png" alt="image_header" class="rounded-3 img-fluid w-100" />
+      </div>
+    </div>
   </div>
-  <div class="general">
-    <form [formGroup]="pressupostForm" class="p-3">
-      <div class="mb-3">
-        <div
-          class="form-check border rounded-3 p-4 shadow-lg d-flex justify-content-between align-items-center"
-        >
+  <div class="row">
+    <div class="col-12 general">
+      <form [formGroup]="pressupostForm" class="p-3">
+        <div class="border rounded-3 p-4 shadow-lg d-flex justify-content-between align-items-center mb-3">
           <div class="max-desc">
             <h3>Seo</h3>
             <h6 class="">Programació d'una web responsive Completa</h6>
           </div>
           <h2>300€</h2>
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              formControlName="Seo"
-            />
+            <input class="form-check-input" type="checkbox" formControlName="Seo" id="pres-seo" />
             <label class="form-check-label" for="pres-seo">Afegir</label>
           </div>
         </div>
-      </div>
-      <div class="mb-3">
-        <div
-          class="form-check border rounded-3 p-4 shadow-lg d-flex justify-content-between align-items-center"
-        >
+        <div class="form-check border rounded-3 p-4 shadow-lg d-flex justify-content-between align-items-center mb-3">
           <div class="max-desc">
             <h3>Ads</h3>
             <h6 class="">Programació d'una web responsive Completa</h6>
           </div>
           <h2>400€</h2>
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              formControlName="Ads"
-            />
-            <label class="form-check-label" for="pres-seo">Afegir</label>
+            <input class="form-check-input" type="checkbox" formControlName="Ads" id="pres-ads" />
+            <label class="form-check-label" for="pres-ads">Afegir</label>
           </div>
         </div>
-      </div>
-      <div class="mb-3">
         <div
-          class="form-check border rounded-3 p-4 shadow-lg d-flex justify-content-between align-items-center flex-wrap"
-        >
+          class="form-check border rounded-3 p-4 shadow-lg d-flex justify-content-between align-items-center flex-wrap mb-3">
           <div class="max-desc">
             <h3>Web</h3>
-            <h6 class="">Programació d'una web responsive Completa</h6>
+            <h6>Programació d'una web responsive Completa</h6>
           </div>
           <h2>500€</h2>
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              (change)="onEventChange()"
-              formControlName="Web"
-            />
+            <input class="form-check-input" type="checkbox" id="pres-web" (change)="onEventChange()"
+              formControlName="Web" />
             <label class="form-check-label" for="pres-web">Afegir</label>
           </div>
-
           @if (pressupostForm.value.Web) {
           <div class="w-100 text-end">
             <app-panel (newItemEvent)="onExtresChange($event)"></app-panel>
           </div>
           }
         </div>
-      </div>
-      <div class="text-end mt-4 p-2">
-        <h2>Preu pressupostat: {{ pressupostTotal }}</h2>
-      </div>
-    </form>
+        <div class="text-end mt-4 p-2">
+          <h2>Preu pressupostat: {{ pressupostTotal }}</h2>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <div
+          class="border rounded-3 p-4 mb-3 shadow-lg d-flex justify-content-between align-items-center flex-wrap w-100">
+          <div class="w-100 mb-3">
+            <h3>Demanar pressupost</h3>
+          </div>
+          <div class="form-group flex-fill me-3">
+            <input class="form-control" type="text" formControlName="Nom" id="inputNom" placeholder="Nom">
+          </div>
+          <div class="form-group flex-fill me-3">
+            <input class="form-control" type="text" formControlName="telefon" id="inputTelefon" placeholder="telèfon">
+          </div>
+          <div class="form-group flex-fill me-3">
+            <input class="form-control" type="text" formControlName="email" id="inputEmail" placeholder="email">
+          </div>
+          <div class="form-group flex-fill me-3">
+            <button type="submit" class="btn-primary">Sol.licitar pressupost</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
