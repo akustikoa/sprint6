@@ -3,8 +3,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BudgetService } from '../services/budget.service.service';
 import { iExtres } from '../interfaces/i-extres';
-import { ModalLlenguatgesComponent } from '../modal-llenguatges/modal-llenguatges.component';
-import { ModalPaginesComponent } from '../modal-pagines/modal-pagines.component';
+import { ModalLlenguatgesComponent } from '../modals/modal-llenguatges/modal-llenguatges.component';
+import { ModalPaginesComponent } from '../modals/modal-pagines/modal-pagines.component';
+
 
 @Component({
   selector: 'app-panel',
@@ -13,7 +14,7 @@ import { ModalPaginesComponent } from '../modal-pagines/modal-pagines.component'
     ReactiveFormsModule,
     CommonModule,
     ModalLlenguatgesComponent,
-    ModalPaginesComponent,
+    ModalPaginesComponent
   ],
   templateUrl: './panel.component.html',
   styleUrl: './panel.component.scss',
@@ -22,7 +23,7 @@ export class PanelComponent {
   @Output() newItemEvent = new EventEmitter<number>();
 
   extres = 0;
-  constructor(private budgetService: BudgetService) {}
+  constructor(private budgetService: BudgetService) { }
 
   extresForm = new FormGroup({
     quantitatPagines: new FormControl<number>(1),

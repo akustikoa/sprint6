@@ -60,24 +60,31 @@
   </div>
   <div class="row">
     <div class="col-12 col-md-12 general2">
-      <form>
+      <form [formGroup]="usuariForm">
         <div
           class="border rounded-3 p-4 mb-3 shadow-lg d-flex justify-content-between align-items-center flex-wrap w-100">
           <div class="w-100 mb-3">
             <h3>Demanar pressupost</h3>
           </div>
           <div class="form-group flex-fill me-3">
-            <input class="form-control" type="text" formControlName="Nom" id="inputNom" placeholder="Nom">
+            <input class="form-control" type="text" formControlName="nom" id="inputNom" placeholder="nom"
+              [class.is-invalid]="usuariForm.controls.nom.touched && usuariForm.controls.nom.invalid"
+              [class.is-valid]="usuariForm.controls.nom.valid">
           </div>
           <div class="form-group flex-fill me-3">
-            <input class="form-control" type="text" formControlName="telefon" id="inputTelefon" placeholder="telèfon">
+            <input class="form-control" type="number" formControlName="telefon" id="inputTelefon" placeholder="telèfon"
+              [class.is-invalid]="usuariForm.controls.telefon.touched && usuariForm.controls.telefon.invalid"
+              [class.is-valid]="usuariForm.controls.telefon.valid">
           </div>
           <div class="form-group flex-fill me-3">
-            <input class="form-control" type="text" formControlName="email" id="inputEmail" placeholder="email">
+            <input class="form-control" type="text" formControlName="email" id="inputEmail" placeholder="email"
+              [class.is-invalid]="usuariForm.controls.email.touched && usuariForm.controls.email.invalid"
+              [class.is-valid]="usuariForm.controls.email.valid">
           </div>
           <div class="form-group me-3">
-            <button type="submit" class="btn btn-success rounded-2">Sol.licitar <svg xmlns="http://www.w3.org/2000/svg"
-                width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+            <button type="submit" class="btn btn-success rounded-2" (click)="guardarPressupost()">Sol.licitar <svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
+                viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                   d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
               </svg></button>

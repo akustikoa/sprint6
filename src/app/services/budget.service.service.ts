@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { iExtres } from '../interfaces/i-extres';
+import { iExtres, iPressupost } from '../interfaces/i-extres';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +16,8 @@ export class BudgetService {
     quantitatPagines: 0,
     quantitatLlenguatges: 0,
   };
+
+  llistaPressupostosFinal: iPressupost[] = [];
 
   calculPressupost(pressupost: any): number {
     this.pressupostTotal = 0;
@@ -51,5 +53,29 @@ export class BudgetService {
     }
     return this.extres;
   }
-  constructor() {}
+
+  getPressupostos(): iPressupost[] {
+    return this.llistaPressupostosFinal;
+  }
+
+  crearPressupost(pressupost: iPressupost): iPressupost[] {
+
+    const guardarPressupost: iPressupost = {
+      serveis: pressupost.serveis,
+      usuari: {
+        nom: pressupost.usuari.nom,
+        telefon: pressupost.usuari.telefon,
+        email: pressupost.usuari.email,
+      },
+      pressupostTotal: pressupost.pressupostTotal,
+      extres: this.detallExtres
+
+    }
+    console.log(this.llistaPressupostosFinal)
+    this.llistaPressupostosFinal.push(guardarPressupost);
+    return [];
+
+  }
+
+  constructor() { }
 }
