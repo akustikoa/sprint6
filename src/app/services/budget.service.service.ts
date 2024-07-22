@@ -54,9 +54,6 @@ export class BudgetService {
     return this.extres;
   }
 
-  getPressupostos(): iPressupost[] {
-    return this.llistaPressupostosFinal;
-  }
 
   crearPressupost(pressupost: iPressupost): iPressupost[] {
 
@@ -76,6 +73,11 @@ export class BudgetService {
     return [];
 
   }
+
+  getPressupostos(): iPressupost[] {
+    return this.llistaPressupostosFinal;
+  }
+
 
   constructor() { }
 }

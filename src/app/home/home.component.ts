@@ -9,16 +9,21 @@ import {
 import { BudgetService } from '../services/budget.service.service';
 import { PanelComponent } from '../panel/panel.component';
 import { iPressupost } from '../interfaces/i-extres';
+import { BudgetsListComponent } from "../budgets-list/budgets-list.component";
+
+
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ReactiveFormsModule, PanelComponent],
+  imports: [ReactiveFormsModule, PanelComponent, BudgetsListComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
+
 export class HomeComponent {
-  usuariForm: FormGroup<{
+  usuariForm: FormGroup<{//inicialitzem form i importem formGroup i form Control
     nom: FormControl<string | null>;
     telefon: FormControl<string | null>;
     email: FormControl<string | null>;
@@ -35,23 +40,18 @@ export class HomeComponent {
       Web: [false],
     });
 
-    this.usuariForm = this.fb.group({
-      nom: ['', [Validators.required, Validators.minLength(3)]],
-      telefon: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-          ),
-        ],
-      ],
+    this.pressupostForm.valueChanges.subscribe((values) => {// valueChanges és l'observalbe que emet un valor quan hi ha un canvi al formulari.
+      //Retorna un observable. Ens subscribim a les modificacions que reb l'observable i values té els valors actualitzats
+      this.pressupostTotal = this.budgetService.calculPressupost(values);//passem la variable pT amb els valors actualitzats al mètode calulPressupost
     });
 
-    this.pressupostForm.valueChanges.subscribe((values) => {
-      this.pressupostTotal = this.budgetService.calculPressupost(values);
+    this.usuariForm = this.fb.group({ //inicialitzem i validem usuariForm 
+      nom: ['xavier', [Validators.required, Validators.minLength(3)]],
+      telefon: ['666666666', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      email: ['xavierprat4@gmail.com', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),],],
     });
+
+
   }
 
   guardarPressupost(): void {
