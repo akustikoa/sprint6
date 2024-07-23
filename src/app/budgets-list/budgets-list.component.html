@@ -1,51 +1,55 @@
 <div class="container general">
-    <div>
+    <div class="mb-3">
         <h2>Pressupostos en curs: </h2>
     </div>
     @for (pressupost of usuariPressupostos; track pressupost) {
     <div class=" border rounded-3 p-5 shadow-lg d-flex justify-content-between align-items-center flex-wrap mb-3 w-100">
-        <div class="row">
-            <div class="col-md-6 col-12">
+
+        <div class="row w-100 align-items-center">
+            <div class="col-md-4 col-12 text-justify">
                 <div class="card-body ">
-                    <div class="row">
-                        <div class="col-md-6 col-12">
-                            <h1 class="card-title">{{pressupost.usuari.nom}}</h1>
-                        </div>
-                        <div class="col-12">
-                            <h6 class="card-text">{{pressupost.usuari.email}}</h6>
-                        </div>
-                        <div class="col-12">
-                            <h6 class="card-text">{{pressupost.usuari.telefon}}</h6>
-                        </div>
+                    <div class="col-12">
+                        <h1 class="card-title">{{pressupost.usuari.nom}}</h1>
+                    </div>
+                    <div class="col-12">
+                        <h6 class="card-text">{{pressupost.usuari.email}}</h6>
+                    </div>
+                    <div class="col-12">
+                        <h6 class="card-text">{{pressupost.usuari.telefon}}</h6>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-12">
+
+            <div class="col-md-4 col-12 text-justify ">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 col-12">
-                            <div class="row justify-content-between align-items-center w-100">
-                                <div class="card-title col-12">
-                                    <h6>Serveis contractats:</h6>
-                                </div>
-                                <div class="col-12">
-                                    @if (pressupost.serveis[0].Seo) {
-                                    <h6 class="card-tex">· SEO</h6>
-                                    }
-                                </div>
-                                <div class="col-12">
-                                    @if (pressupost.serveis[1].Ads) {
-                                    <h6 class="card-text">· ADS</h6>
-                                    }
-                                </div>
-                                <div class="col-12">
-                                    @if (pressupost.serveis[2].Web) {
-                                    <h6 class="card-text">· WEB ({{pressupost.extres.quantitatLlenguatges}} Llenguatges,
-                                        {{pressupost.extres.quantitatPagines}} Pàgines) </h6>
-                                    }
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card-title col-12">
+                        <h6>Serveis contractats:</h6>
+                    </div>
+                    <div>
+                        @if (pressupost.serveis[0].Seo) {
+                        <h6 class="card-tex">· SEO</h6>
+                        }
+                    </div>
+                    <div>
+                        @if (pressupost.serveis[1].Ads) {
+                        <h6 class="card-text">· ADS</h6>
+                        }
+                    </div>
+                    <div class="mt-2">
+                        @if (pressupost.serveis[2].Web) {
+                        <h6 class="card-text">· WEB ({{pressupost.extres.quantitatLlenguatges}} Llenguatges,
+                            {{pressupost.extres.quantitatPagines}} Pàgines) </h6>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 text-center me-0">
+                <div class="card-body">
+                    <div class="card-title col-12">
+                        <h6>Total:</h6>
+                    </div>
+                    <div class="col-12">
+                        <h6 class="card-tex">{{pressupost.pressupostTotal}}</h6>
                     </div>
                 </div>
             </div>

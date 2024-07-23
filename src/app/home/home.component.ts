@@ -50,8 +50,6 @@ export class HomeComponent {
       telefon: ['666666666', [Validators.required, Validators.pattern(/^\d{9}$/)]],
       email: ['xavierprat4@gmail.com', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),],],
     });
-
-
   }
 
   guardarPressupost(): void {
