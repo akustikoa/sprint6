@@ -12,8 +12,6 @@ import { iPressupost } from '../interfaces/i-extres';
 import { BudgetsListComponent } from "../budgets-list/budgets-list.component";
 
 
-
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -101,3 +99,4 @@ export class HomeComponent {
     this.onEventChange();
   }
 }
+
