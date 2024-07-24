@@ -4,6 +4,7 @@ import { iExtres, iPressupost } from '../interfaces/i-extres';
 @Injectable({
   providedIn: 'root',
 })
+
 export class BudgetService {
   Seo = 300;
   Ads = 400;

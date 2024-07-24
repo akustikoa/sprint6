@@ -66,22 +66,22 @@
           <div class="w-100 mb-3">
             <h3>Demanar pressupost</h3>
           </div>
-          <div class="form-group flex-fill me-3">
+          <div class="form-group flex-fill me-3 mb-3">
             <input class="form-control" type="text" formControlName="nom" id="inputNom" placeholder="nom"
               [class.is-invalid]="usuariForm.controls.nom.touched && usuariForm.controls.nom.invalid"
               [class.is-valid]="usuariForm.controls.nom.valid">
           </div>
-          <div class="form-group flex-fill me-3">
+          <div class="form-group flex-fill me-3 mb-3">
             <input class="form-control" type="number" formControlName="telefon" id="inputTelefon" placeholder="telèfon"
               [class.is-invalid]="usuariForm.controls.telefon.touched && usuariForm.controls.telefon.invalid"
               [class.is-valid]="usuariForm.controls.telefon.valid">
           </div>
-          <div class="form-group flex-fill me-3">
+          <div class="form-group flex-fill me-3 mb-3">
             <input class="form-control" type="text" formControlName="email" id="inputEmail" placeholder="email"
               [class.is-invalid]="usuariForm.controls.email.touched && usuariForm.controls.email.invalid"
               [class.is-valid]="usuariForm.controls.email.valid">
           </div>
-          <div class="form-group flex-fill me-3">
+          <div class="form-group d-flex align-items-center mb-3">
             <button type="submit" class="btn btn-success rounded-2" (click)="guardarPressupost()">Sol.licitar <svg
                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
                 viewBox="0 0 16 16">
@@ -91,6 +91,11 @@
           </div>
         </div>
       </form>
+    </div>
+    <div class="row text-center">
+      <div class="col-12 text-center">
+        <hr class="mx-auto" />
+      </div>
     </div>
   </div>
   <app-budgets-list></app-budgets-list>

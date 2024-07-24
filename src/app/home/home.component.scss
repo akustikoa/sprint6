@@ -1,11 +1,18 @@
 .general {
-  padding: 100px !important;
+  padding: 90px !important;
 }
 .general2 {
-  padding-left: 115px;
-  padding-bottom: 115px;
-  padding-right: 115px;
+  padding-left: 105px;
+  padding-bottom: 105px;
+  padding-right: 105px;
 }
 .max-desc {
   max-width: 300px;
+}
+hr {
+  width: 82% !important;
+  height: 0 !important;
+  border: medium none !important;
+  border-top: 3px dashed grey !important;
+  margin: 0 auto;
 }

@@ -48,7 +48,7 @@ export class HomeComponent {
     this.usuariForm = this.fb.group({ //inicialitzem i validem usuariForm 
       nom: ['xavier', [Validators.required, Validators.minLength(3)]],
       telefon: ['666666666', [Validators.required, Validators.pattern(/^\d{9}$/)]],
-      email: ['xavierprat4@gmail.com', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),],],
+      email: ['xavier4@gmail.com', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),],],
     });
   }
 
@@ -86,6 +86,8 @@ export class HomeComponent {
   resetForm(): void {
     this.usuariForm.reset();
     this.pressupostForm.reset();
+    this.extres = 0;
+
   }
 
   onEventChange() {

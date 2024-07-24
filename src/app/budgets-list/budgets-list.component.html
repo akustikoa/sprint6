@@ -1,5 +1,5 @@
 <div class="container general">
-    <div class="mb-3">
+    <div class="mb-5">
         <h2>Pressupostos en curs: </h2>
     </div>
     @for (pressupost of usuariPressupostos; track pressupost) {
@@ -12,17 +12,17 @@
                         <h1 class="card-title">{{pressupost.usuari.nom}}</h1>
                     </div>
                     <div class="col-12">
-                        <h6 class="card-text">{{pressupost.usuari.email}}</h6>
+                        <h6 class="card-text text-black-50">{{pressupost.usuari.email}}</h6>
                     </div>
                     <div class="col-12">
-                        <h6 class="card-text">{{pressupost.usuari.telefon}}</h6>
+                        <h6 class="card-text text-black-50">{{pressupost.usuari.telefon}}</h6>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 col-12 text-justify ">
                 <div class="card-body">
-                    <div class="card-title col-12">
+                    <div class="card-title col-12 fw-bold">
                         <h6>Serveis contractats:</h6>
                     </div>
                     <div>
@@ -37,19 +37,20 @@
                     </div>
                     <div class="mt-2">
                         @if (pressupost.serveis[2].Web) {
-                        <h6 class="card-text">· WEB ({{pressupost.extres.quantitatLlenguatges}} Llenguatges,
-                            {{pressupost.extres.quantitatPagines}} Pàgines) </h6>
+                        <h6 class="card-text">· WEB (Extra Llenguatges {{pressupost.extres.quantitatLlenguatges}},
+                            Extra Pàgines {{pressupost.extres.quantitatPagines}}) </h6>
                         }
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-12 text-center me-0">
                 <div class="card-body">
-                    <div class="card-title col-12">
-                        <h6>Total:</h6>
+                    <div class="card-title col-12 text-black-50">
+                        <h5>Total:</h5>
                     </div>
                     <div class="col-12">
-                        <h6 class="card-tex">{{pressupost.pressupostTotal}}</h6>
+                        <h1 class="card-tex">{{pressupost.pressupostTotal}}<span class="euro">€</span>
+                        </h1>
                     </div>
                 </div>
             </div>
