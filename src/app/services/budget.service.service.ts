@@ -20,6 +20,7 @@ export class BudgetService {
 
   llistaPressupostosFinal: iPressupost[] = [];
 
+
   calculPressupost(pressupost: any): number {
     this.pressupostTotal = 0;
     if (pressupost.Seo) {
@@ -79,6 +80,6 @@ export class BudgetService {
     return this.llistaPressupostosFinal;
   }
 
-
   constructor() { }
+
 }
