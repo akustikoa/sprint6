@@ -67,12 +67,12 @@ export class BudgetService {
         email: pressupost.usuari.email,
       },
       pressupostTotal: pressupost.pressupostTotal,
-      extres: this.detallExtres
-
+      extres: this.detallExtres,
+      data: new Date().toISOString()
     }
     console.log(this.llistaPressupostosFinal)
     this.llistaPressupostosFinal.push(guardarPressupost);
-    return [];
+    return this.llistaPressupostosFinal;
 
   }
 

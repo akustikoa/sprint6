@@ -7,6 +7,7 @@ export interface iPressupost {
   };
   pressupostTotal: number;
   extres: iExtres;
+  data: string;
 }
 
 export interface iExtres {

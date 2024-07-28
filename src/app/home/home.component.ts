@@ -21,7 +21,7 @@ import { BudgetsListComponent } from "../budgets-list/budgets-list.component";
 })
 
 export class HomeComponent {
-  usuariForm: FormGroup<{//inicialitzem form i importem formGroup i form Control
+  usuariForm: FormGroup<{
     nom: FormControl<string | null>;
     telefon: FormControl<string | null>;
     email: FormControl<string | null>;
@@ -43,7 +43,7 @@ export class HomeComponent {
       this.pressupostTotal = this.budgetService.calculPressupost(values);//passem la variable pT amb els valors actualitzats al mètode calulPressupost
     });
 
-    this.usuariForm = this.fb.group({ //inicialitzem i validem usuariForm 
+    this.usuariForm = this.fb.group({
       nom: ['xavier', [Validators.required, Validators.minLength(3)]],
       telefon: ['666666666', [Validators.required, Validators.pattern(/^\d{9}$/)]],
       email: ['xavier4@gmail.com', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),],],
@@ -64,7 +64,8 @@ export class HomeComponent {
           extres: {
             quantitatLlenguatges: 0,
             quantitatPagines: 0
-          }
+          },
+          data: ''
         };
         this.budgetService.crearPressupost(pressupost);
         alert('pressupost creat amb èxit');

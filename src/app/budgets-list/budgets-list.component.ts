@@ -44,17 +44,17 @@ export class BudgetsListComponent {
     this.ordreAscendentNom = !this.ordreAscendentNom;
   }
 
-  // ordenaPressupostosPerData(): void { // Afegir aquesta funció
-  //   this.usuariPressupostos.sort((a, b) => {
-  //     const dateA = new Date(a.data).getTime();
-  //     const dateB = new Date(b.data).getTime();
-  //     if (this.ordreAscendentData) {
-  //       return dateA - dateB;
-  //     } else {
-  //       return dateB - dateA;
-  //     }
-  //   });
-  //   this.ordreAscendentData = !this.ordreAscendentData; // Canviar l'estat de l'ordre per la propera vegada
-  // }
+  ordenaPressupostosPerData(): void {
+    this.usuariPressupostos.sort((a, b) => {
+      const dateA = new Date(a.data).getTime();
+      const dateB = new Date(b.data).getTime();
+      if (this.ordreAscendentData) {
+        return dateA - dateB;
+      } else {
+        return dateB - dateA;
+      }
+    });
+    this.ordreAscendentData = !this.ordreAscendentData;
+  }
 
 }
