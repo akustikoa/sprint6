@@ -4,3 +4,13 @@
 .euro {
   font-size: 1.7rem;
 }
+.custom-button {
+  border: none;
+  text-decoration: none;
+  color: gray;
+}
+.custom-button:hover,
+.custom-button:focus {
+  color: black;
+  text-decoration: none;
+}

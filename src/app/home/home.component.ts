@@ -38,9 +38,9 @@ export class HomeComponent {
       Web: [false],
     });
 
-    this.pressupostForm.valueChanges.subscribe((values) => {// valueChanges és l'observalbe que emet un valor quan hi ha un canvi al formulari.
-      //Retorna un observable. Ens subscribim a les modificacions que reb l'observable i values té els valors actualitzats
-      this.pressupostTotal = this.budgetService.calculPressupost(values);//passem la variable pT amb els valors actualitzats al mètode calulPressupost
+    this.pressupostForm.valueChanges.subscribe((values) => {
+
+      this.pressupostTotal = this.budgetService.calculPressupost(values);
     });
 
     this.usuariForm = this.fb.group({

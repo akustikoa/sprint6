@@ -1,8 +1,12 @@
 <div class="container general">
-    <div class="mb-5">
+    <div class="d-flex justify-content-between mb-5">
         <h2>Pressupostos en curs: </h2>
-        <button (click)="ordenaImport()">Import</button><button (click)="ordenaPressupostosPerNom()">Nom</button><button
-            (click)="ordenaPressupostosPerData()">Ordena per data</button>
+        <div class="d-flex justify justify-content-end">
+            <button class="btn btn-link text-secondary custom-button" (click)="ordenaImport()">Import </button><button
+                class="btn btn-link text-secondary custom-button"
+                (click)="ordenaPressupostosPerNom()">Nom</button><button
+                class="btn btn-link text-secondary custom-button" (click)="ordenaPressupostosPerData()">Data</button>
+        </div>
     </div>
     @for (pressupost of usuariPressupostos; track pressupost) {
     <div class=" border rounded-3 p-5 shadow-lg d-flex justify-content-between align-items-center flex-wrap mb-3 w-100">
