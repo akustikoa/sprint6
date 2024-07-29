@@ -31,6 +31,8 @@ npm install -g @angular/cli
 
 1. Clona el repositori:
 
+https://github.com/akustikoa/sprint6.git
+
 2. Entra al directorio del proyecto:
 
 ```bash
