@@ -44,9 +44,9 @@ export class HomeComponent {
     });
 
     this.usuariForm = this.fb.group({
-      nom: ['xavier', [Validators.required, Validators.minLength(3)]],
-      telefon: ['666666666', [Validators.required, Validators.pattern(/^\d{9}$/)]],
-      email: ['xavier4@gmail.com', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),],],
+      nom: ['', [Validators.required, Validators.minLength(3)]],
+      telefon: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),],],
     });
   }
 
