@@ -16,6 +16,10 @@ export class BudgetsListComponent {
   ordreAscendentNom: boolean = true;
   ordreAscendentData: boolean = true;
 
+  mostrarFletxaImport: boolean = false;
+  mostrarFletxaNom: boolean = false;
+  mostrarFletxaData: boolean = false;
+
   constructor(private budgetService: BudgetService) { }
 
   ngOnInit(): void {
@@ -31,6 +35,11 @@ export class BudgetsListComponent {
       }
     });
     this.ordreAscendent = !this.ordreAscendent;
+
+    this.mostrarFletxaImport = true;
+    this.mostrarFletxaNom = false;
+    this.mostrarFletxaData = false;
+
   }
 
   ordenaPressupostosPerNom(): void {
@@ -42,6 +51,10 @@ export class BudgetsListComponent {
       }
     });
     this.ordreAscendentNom = !this.ordreAscendentNom;
+
+    this.mostrarFletxaImport = false;
+    this.mostrarFletxaNom = true;
+    this.mostrarFletxaData = false;
   }
 
   ordenaPressupostosPerData(): void {
@@ -55,6 +68,10 @@ export class BudgetsListComponent {
       }
     });
     this.ordreAscendentData = !this.ordreAscendentData;
+
+    this.mostrarFletxaImport = false;
+    this.mostrarFletxaNom = false;
+    this.mostrarFletxaData = true;
   }
 
 }

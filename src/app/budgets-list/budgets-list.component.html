@@ -2,10 +2,20 @@
     <div class="d-flex justify-content-between mb-5">
         <h2>Pressupostos en curs: </h2>
         <div class="d-flex justify justify-content-end">
-            <button class="btn btn-link text-secondary custom-button" (click)="ordenaImport()">Import </button><button
-                class="btn btn-link text-secondary custom-button"
-                (click)="ordenaPressupostosPerNom()">Nom</button><button
-                class="btn btn-link text-secondary custom-button" (click)="ordenaPressupostosPerData()">Data</button>
+            <button class="btn btn-link text-secondary custom-button" (click)="ordenaImport()">Import
+                @if (mostrarFletxaImport) {
+                <i [class]="ordreAscendent ? 'fas fa-arrow-down' : 'fas fa-arrow-up'"></i>}
+            </button>
+
+            <button class="btn btn-link text-secondary custom-button" (click)="ordenaPressupostosPerNom()">Nom
+                @if (mostrarFletxaNom) {
+                <i [class]="ordreAscendentNom ? 'fas fa-arrow-down' : 'fas fa-arrow-up'"></i>}
+            </button>
+
+            <button class="btn btn-link text-secondary custom-button" (click)="ordenaPressupostosPerData()">Data
+                @if (mostrarFletxaData) {
+                <i [class]="ordreAscendentData ? 'fas fa-arrow-down' : 'fas fa-arrow-up'"></i>}
+            </button>
         </div>
     </div>
     @for (pressupost of usuariPressupostos; track pressupost) {
