@@ -1,27 +1,54 @@
-# Pressupostos
+# Aplicación de Gestió de pressupostos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+## Descripción 📄
 
-## Development server
+Aquesta aplicació està desenvolupada amb Angular 18. Permeten crear i ordenar pressupostos per data
+, import i Nom.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Carecterístiques ✨
 
-## Code scaffolding
+- Crea pressupostos amb diferents serveis i preus associats
+- Guardar els pressupostos en emmagatzematge local del navegador.
+- Visualiza una llista amb els pressupostos creats.
+- Ordena els pressupostos d'aquesta llista segons nom, import o data.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologies Utilizades 💻
 
-## Build
+- TypeScript
+- HTML5
+- CSS
+- [Angular CLI](https://github.com/angular/angular-cli) versio 18.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Requisits 📋
 
-## Running unit tests
+- Node.js y npm instal.lats prèviament. pots instalar-ho amb els seüents comandaments:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install -g @angular/cli
+```
 
-## Running end-to-end tests
+## Instalación 🛠️
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clona el repositori:
 
-## Further help
+2. Entra al directorio del proyecto:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+cd pressupostos
+```
+
+4. Instal.la las dependències:
+
+```bash
+npm install
+```
+
+## Execució ▶️
+
+Executa l'aplicació amb el seguent comandament:
+
+```bash
+ng s -o
+
+Desde la consola de VSC: npm start
+```

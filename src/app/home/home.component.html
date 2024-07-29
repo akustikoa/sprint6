@@ -61,25 +61,61 @@
   <div class="row">
     <div class="col-12 general2">
       <form [formGroup]="usuariForm">
-        <div
-          class="border rounded-3 p-4 mb-5 shadow-lg d-flex justify-content-between align-items-center flex-wrap w-100">
+        <div class="border rounded-3 p-4  shadow-lg d-flex justify-content-between align-items-center flex-wrap w-100">
           <div class="w-100 mb-3">
             <h3>Demanar pressupost</h3>
           </div>
-          <div class="form-group flex-fill me-3 mb-3">
+          <div class="form-group flex-fill me-3 mb-3 position-relative">
             <input class="form-control" type="text" formControlName="nom" id="inputNom" placeholder="nom"
               [class.is-invalid]="usuariForm.controls.nom.touched && usuariForm.controls.nom.invalid"
               [class.is-valid]="usuariForm.controls.nom.valid">
+
+            @if (usuariForm.controls.nom.touched && usuariForm.controls.nom.invalid) {
+            <div class="invalid-feedback form-group flex-fill position-absolute bottom-2">
+              @if (usuariForm.controls.nom.errors?.['required']) {
+              <div>El camp nom és obligatori.</div>
+              }
+              @if (usuariForm.controls.nom.errors?.['minlength']) {
+              <div>El nom ha de tenir mínim 3 caràcters.</div>
+              }
+            </div>
+            }
+
           </div>
-          <div class="form-group flex-fill me-3 mb-3">
-            <input class="form-control" type="number" formControlName="telefon" id="inputTelefon" placeholder="telèfon"
+          <div class="form-group flex-fill me-3 mb-3 position-relative">
+            <input class="form-control" type="number" formControlName="telefon" id="inputTelefon" maxlength="9"
+              placeholder="telèfon"
               [class.is-invalid]="usuariForm.controls.telefon.touched && usuariForm.controls.telefon.invalid"
               [class.is-valid]="usuariForm.controls.telefon.valid">
+
+            @if (usuariForm.controls.telefon.touched && usuariForm.controls.telefon.invalid) {
+            <div class="invalid-feedback form-group flex-fill position-absolute bottom-2">
+              @if (usuariForm.controls.telefon.errors?.['required']) {
+              El camp telèfon és obligatori.
+              }
+              @if (usuariForm.controls.telefon.errors?.['pattern']) {
+              El camp telèfon ha de tenir 9 dígits.
+              }
+
+            </div>
+            }
           </div>
-          <div class="form-group flex-fill me-3 mb-3">
+          <div class="form-group flex-fill me-3 mb-3 position-relative">
             <input class="form-control" type="text" formControlName="email" id="inputEmail" placeholder="email"
               [class.is-invalid]="usuariForm.controls.email.touched && usuariForm.controls.email.invalid"
               [class.is-valid]="usuariForm.controls.email.valid">
+
+            @if (usuariForm.controls.email.touched && usuariForm.controls.email.invalid) {
+            <div class="invalid-feedback form-group flex-fill position-absolute bottom-2">
+              @if (usuariForm.controls.email.errors?.['required']) {
+              El camp email és obligatori.
+              }
+              @if (usuariForm.controls.email.errors?.['pattern']) {
+              Introdueix un correu vàlid.
+              }
+
+            </div>
+            }
           </div>
           <div class="form-group d-flex align-items-center mb-3">
             <button type="submit" class="btn btn-success rounded-2" (click)="guardarPressupost()">Sol.licitar <svg

@@ -45,7 +45,7 @@ export class HomeComponent {
 
     this.usuariForm = this.fb.group({
       nom: ['', [Validators.required, Validators.minLength(3)]],
-      telefon: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      telefon: ['', [Validators.required, Validators.maxLength(9), Validators.pattern(/^\d{9}$/)]],
       email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),],],
     });
   }
